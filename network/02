@@ -1,0 +1,1 @@
+networksetup getinfo Ethernet | grep "IP address" | grep -v "v6" | awk '{print $3}'
