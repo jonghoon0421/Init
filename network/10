@@ -1,0 +1,2 @@
+# -w 1 is to set the response-waiting time to 1 sec
+traceroute -w 1 slash16.org
