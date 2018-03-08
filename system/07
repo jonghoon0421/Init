@@ -1,0 +1,3 @@
+# service sshd status | grep "Main PID" | awk '{print $3}'
+# OR simply
+# cat /var/run/sshd.pid as sshd will typically write a PID file (default path)
