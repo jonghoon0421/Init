@@ -1,0 +1,6 @@
+# kill
+
+# usage is as follows:
+# kill PID ...... or ...... kill %job_number
+# you get %job_number from "jobs" command
+# you can get PID with "jobs -l" command or any other methods

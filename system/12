@@ -1,0 +1,3 @@
+# du -sh /var/*
+# -s for displaying only the total for each
+# -h for displaying in human-readable format
