@@ -2,7 +2,6 @@
 # add the following script to your cron table (crontab)
 # using "0 0 * * * root /path/to/script >> /etc/crontab"
 # "md5sum" >> "md5 -r" for Mac OS compatibility
-# this is a test file
 
 file=~/Desktop/orig
 md5old=~/Desktop/orig_copy
