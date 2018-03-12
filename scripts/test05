@@ -3,6 +3,7 @@
 # using "0 0 * * * root /path/to/script >> /etc/crontab"
 # "md5sum" >> "md5 -r" for Mac OS compatibility
 
+
 file=~/Desktop/orig
 md5old=~/Desktop/orig_copy
 
