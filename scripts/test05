@@ -1,15 +1,16 @@
 #!/bin/sh
 # add the following script to your cron table (crontab)
 # using "0 0 * * * root /path/to/script >> /etc/crontab"
+# "md5sum" >> "md5 -r" for Mac OS compatibility
 
-file=/etc/crontab
-md5old=/etc/crontab_copy
+file=~/Desktop/orig
+md5old=~/Desktop/orig_copy
 
 if [[ ! -f $md5old ]]; then
 	touch $md5old
 fi
 
-filemd5=`md5sum $file | cut -d " " -f1`
+filemd5=`md5 -r $file | cut -d " " -f1`
 
 if [ -z $filemd5 ]; then
 	echo "Error : filemd5 is empty"
@@ -19,12 +20,12 @@ else
 		savedmd5=`cat $md5old`
 		if [ -z $savedmd5 ]; then
 			echo "Error : savedmd5 is empty"
-			exit 1
+			echo "... Check will occur on the next scheduled date"
 		fi
 		if [ "$savedmd5" == "$filemd5" ]; then
 			:
 		else
-			echo "crontab file has been changed" | mail -s "Alert" root
+			echo "crontab file has been changed" | mail -s "Alert" example@example.com
 		fi
 	else
 		:
