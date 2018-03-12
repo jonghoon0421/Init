@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ -d "$1" ]; then
+	ls -lS "$1"
+else
+	echo "Error : invalid folder"
+fi
+
+# ls -Slb $1 | grep '^[-l]' | awk '{ print $9, $5 }' (one line)
+# above command excludes subdirectories in a folder and only lists files
+# in <"file name" "file size"> format
